@@ -1,0 +1,55 @@
+#include<iostream>
+#include<string>
+using namespace std;
+void StarWarsNameGenerator()
+{
+	string ime;
+	string prezime;
+	string majcino_djevojacko_prezime;
+	string grad_rodjenja;
+
+	cout << "Unesite Vase ime: ";
+	cin >> ime;
+	cout << "Unesite prezime: ";
+	cin >> prezime;
+	cout << "Majcino djevojacko prezime: ";
+	cin >> majcino_djevojacko_prezime;
+	cout << "Grad u kojem ste rodjeni: ";
+	cin >> grad_rodjenja;
+
+	string full_name = ime.substr(0, 3) + prezime.substr(0, 2) + ' ' + majcino_djevojacko_prezime.substr(0, 2) + grad_rodjenja.substr(0, 3);
+	cout << "Vase Star Wars ime je: " << full_name << endl;
+}
+void jednacina(double x1, double x2)
+{
+	double y;
+	double brojac;
+	brojac = 0;
+	for (double x = x1; x < x2 + 1; x++)
+	{
+		brojac += 1; 
+		y = pow(x, 2)+2*x-5;
+		cout << "Rjesenje za " <<x<<" je: " << y << endl;
+	}
+}
+int main()
+{
+	double x1, x2;
+	StarWarsNameGenerator();
+	pocetak: cout << "Unesite broj od kojeg zelite da se racuna: ";
+	cin >> x1;
+	cout << "Unesite broj do kojeg zelite da se racuna: ";
+	cin >> x2;
+	if (x2 < x1 || x1 == x2)
+	{
+		cout << "Greska. Unesite brojeve ponovo. "<<endl;
+		goto pocetak;
+	}
+	else
+	{
+		jednacina(x1,x2);
+	}
+
+	system("Pause");
+	return 0;
+}
